@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useSelector, useDispatch } from "react-redux"
-import { counterActions } from "../../store/index"
+import { DECREMENT, INCREMENT, INCREASE, TOGGLE } from "../../store/index"
 
 const theme = createTheme({
     palette: {
@@ -26,30 +26,30 @@ const CardWrapper = () => {
     const counter = useSelector(state => state?.counter)
     const toggler = useSelector(state => state?.showCounter)
 
-    console.log(toggler)
-
     const increment = () => {
 
-        dispatch(counterActions.increment());
-
+        dispatch({ type: INCREMENT })
     }
 
     const decrement = () => {
 
-        dispatch(counterActions.decrement());
-
+        dispatch({ type: DECREMENT })
     }
 
     const incrementBy5 = (incrementbyVal) => {
 
-        dispatch(counterActions.increase(incrementbyVal));
-
+        dispatch({
+            type: INCREASE,
+            value: incrementbyVal
+        })
 
     }
 
     const toggleCounter = () => {
 
-        dispatch(counterActions.toggle());
+        dispatch({
+            type: TOGGLE
+        })
     }
 
 
