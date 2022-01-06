@@ -60,7 +60,3 @@ or
 ```bash
  npm start
 ```
-
-## LICENSE
-
-#### [MIT](./LICENSE) © [Shashikant Shinde](http://shashikantshinde.com)
